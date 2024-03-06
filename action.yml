@@ -1,23 +1,14 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Action Set Assignees'
+description: 'Set assignees to an issue or a pull request'
+author: 'Incode Technologies, Inc.'
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
-branding:
-  icon: 'heart'
-  color: 'red'
-
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  github_token:
+    description: "A GitHub token."
     required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: 'Your output description here'
+  assignee:
+    description: "The assignee to be set."
+    default: ${{ github.actor }}
 
 runs:
   using: node20
