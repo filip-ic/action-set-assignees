@@ -9,6 +9,10 @@ inputs:
   assignee:
     description: 'The assignee to be set.'
     default: ${{ github.actor }}
+  repo:
+    description: 'The owner and repository name.'
+    required: false
+    default: ${{ github.repository }}
 
 runs:
   using: node20
