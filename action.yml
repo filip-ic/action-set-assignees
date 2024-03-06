@@ -4,10 +4,10 @@ author: 'Incode Technologies, Inc.'
 
 inputs:
   github_token:
-    description: "A GitHub token."
+    description: 'A GitHub token.'
     required: true
   assignee:
-    description: "The assignee to be set."
+    description: 'The assignee to be set.'
     default: ${{ github.actor }}
 
 runs:
