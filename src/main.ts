@@ -10,13 +10,15 @@ export async function run(): Promise<void> {
     const githubToken = core.getInput('github_token', { required: true })
 
     const assignee = core.getInput('assignee', { required: true })
-
+	const [owner, repo] = core.getInput('repo').split('/');
     const number = github.context.issue.number
 
     const client = new github.GitHub(githubToken)
 
     await client.issues.addAssignees({
       assignee,
+      owner,
+      repo,
       issue_number: number
     })
   } catch (error) {
