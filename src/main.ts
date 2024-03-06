@@ -10,6 +10,8 @@ export async function run(): Promise<void> {
     const githubToken = core.getInput('github_token', { required: true })
 
     const assignee = core.getInput('assignee', { required: true })
+						 .split('\n')
+						 .filter(l => l !== '');
 	const [owner, repo] = core.getInput('repo').split('/');
     const number = github.context.issue.number
 
